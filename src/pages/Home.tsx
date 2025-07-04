@@ -1,55 +1,24 @@
 import React from 'react';
 import { ChevronDown, ArrowRight, Globe, Zap, Shield, Building, Users, Award, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TechBackground from '../components/TechBackground';
+import CornerTechModels from '../components/CornerTechModels';
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className="relative min-h-screen overflow-hidden bg-black">
+      {/* Animated green glow at the top */}
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-48 z-10" style={{
+        background: 'radial-gradient(ellipse 60% 100% at 50% 0%, #B5FF6D 0%, transparent 80%)',
+        filter: 'blur(32px)',
+        opacity: 0.7,
+        animation: 'glowPulse 3s ease-in-out infinite',
+      }} />
+      {/* Corner Tech Models (animated, in corners) */}
+      <CornerTechModels />
       {/* Hero Section */}
       <section className="min-h-screen bg-black relative overflow-hidden flex items-center justify-center pt-20">
-        {/* Massive 3D Tech Infrastructure Background */}
-        <div className="absolute inset-0 perspective-[3000px]">
-          {/* Giant 3D Server Racks */}
-          <div className="absolute left-0 top-0 w-full h-full transform rotateY-15 rotateX-5">
-            <div className="grid grid-cols-8 gap-8 h-full opacity-10">
-              {Array.from({ length: 64 }).map((_, i) => (
-                <div 
-                  key={i}
-                  className="bg-gradient-to-b from-[#B5FF6D]/20 to-[#8A9A5B]/20 border border-[#B5FF6D]/30 rounded-lg transform translateZ-[100px] animate-pulse"
-                  style={{ 
-                    animationDelay: `${i * 100}ms`,
-                    height: `${Math.random() * 300 + 200}px`
-                  }}
-                >
-                  <div className="w-full h-4 bg-[#B5FF6D]/40 rounded-t-lg"></div>
-                  <div className="p-2 space-y-1">
-                    {Array.from({ length: 3 }).map((_, j) => (
-                      <div key={j} className="h-1 bg-[#8A9A5B]/60 rounded animate-pulse"></div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Floating 3D Tech Cubes */}
-          <div className="absolute right-20 top-20 perspective-[1000px]">
-            <div className="relative w-64 h-64 animate-spin-slow">
-              {Array.from({ length: 27 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-8 h-8 bg-gradient-to-br from-[#B5FF6D]/30 to-[#8A9A5B]/30 border border-[#B5FF6D]/50 rounded transform animate-float"
-                  style={{
-                    left: `${(i % 3) * 80}px`,
-                    top: `${Math.floor((i % 9) / 3) * 80}px`,
-                    transform: `translateZ(${Math.floor(i / 9) * 80}px) rotateX(${i * 40}deg) rotateY(${i * 60}deg)`,
-                    animationDelay: `${i * 200}ms`
-                  }}
-                ></div>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* REMOVE: Massive 3D Tech Infrastructure Background and Floating 3D Tech Cubes from here, replaced by TechBackground above */}
 
         {/* Main Content */}
         <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
