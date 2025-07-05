@@ -7,6 +7,7 @@ const Contact: React.FC = () => {
     name: '',
     email: '',
     phone: '',
+    subject: '',
     projectType: '',
     budget: '',
     timeline: '',
@@ -89,7 +90,7 @@ const Contact: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 px-6 py-3 bg-[#B5FF6D]/10 border border-[#B5FF6D]/30 rounded-full mb-8">
+          <div className="inline-flex items-center space-x-2 px-6 py-3 bg-[#B5FF6D]/10 border border-[#B5FF6D]/30 rounded-full mb-8 animate-pulse-glow">
             <Building className="w-5 h-5 text-[#B5FF6D]" />
             <span className="text-[#B5FF6D] font-semibold">Enterprise Partnerships</span>
           </div>
@@ -109,7 +110,7 @@ const Contact: React.FC = () => {
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12">
+                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12 animate-pulse-glow">
                     <Mail className="w-8 h-8 text-[#B5FF6D]" />
                   </div>
                   <div>
@@ -120,7 +121,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12">
+                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12 animate-pulse-glow">
                     <Phone className="w-8 h-8 text-[#B5FF6D]" />
                   </div>
                   <div>
@@ -131,7 +132,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12">
+                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12 animate-pulse-glow">
                     <MapPin className="w-8 h-8 text-[#B5FF6D]" />
                   </div>
                   <div>
@@ -142,7 +143,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12">
+                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12 animate-pulse-glow">
                     <Calendar className="w-8 h-8 text-[#B5FF6D]" />
                   </div>
                   <div>
@@ -155,26 +156,26 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Enterprise Benefits */}
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 animate-glow-border">
               <div className="flex items-center space-x-3 mb-6">
                 <Users className="w-6 h-6 text-[#B5FF6D]" />
                 <span className="text-white font-bold text-xl">Enterprise Advantages</span>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full"></div>
+                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full animate-pulse"></div>
                   <span className="text-[#8A9A5B]">Dedicated project manager</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full"></div>
+                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full animate-pulse"></div>
                   <span className="text-[#8A9A5B]">24/7 priority support</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full"></div>
+                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full animate-pulse"></div>
                   <span className="text-[#8A9A5B]">Custom SLA agreements</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full"></div>
+                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full animate-pulse"></div>
                   <span className="text-[#8A9A5B]">Scalable team allocation</span>
                 </div>
               </div>
@@ -182,31 +183,31 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Enterprise Contact Form */}
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 animate-glow-border">
             <h3 className="text-2xl font-bold text-white mb-6">Start Your Enterprise Project</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-white font-semibold mb-2">Company Name *</label>
+                <div className="group">
+                  <label className="block text-white font-semibold mb-2 group-hover:text-[#B5FF6D] transition-colors duration-300">Company Name *</label>
                   <input
                     type="text"
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-all duration-300 group-hover:border-[#B5FF6D]/50 group-hover:shadow-[0_0_20px_rgba(181,255,109,0.2)] focus:shadow-[0_0_20px_rgba(181,255,109,0.3)]"
                     placeholder="Your company"
                     required
                   />
                 </div>
-                <div>
-                  <label className="block text-white font-semibold mb-2">Contact Name *</label>
+                <div className="group">
+                  <label className="block text-white font-semibold mb-2 group-hover:text-[#B5FF6D] transition-colors duration-300">Contact Name *</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-all duration-300 group-hover:border-[#B5FF6D]/50 group-hover:shadow-[0_0_20px_rgba(181,255,109,0.2)] focus:shadow-[0_0_20px_rgba(181,255,109,0.3)]"
                     placeholder="Your name"
                     required
                   />
@@ -214,39 +215,106 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-white font-semibold mb-2">Email Address *</label>
+                <div className="group">
+                  <label className="block text-white font-semibold mb-2 group-hover:text-[#B5FF6D] transition-colors duration-300">Email Address *</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-all duration-300 group-hover:border-[#B5FF6D]/50 group-hover:shadow-[0_0_20px_rgba(181,255,109,0.2)] focus:shadow-[0_0_20px_rgba(181,255,109,0.3)]"
                     placeholder="your@company.com"
                     required
                   />
                 </div>
-                <div>
-                  <label className="block text-white font-semibold mb-2">Phone Number</label>
+                <div className="group">
+                  <label className="block text-white font-semibold mb-2 group-hover:text-[#B5FF6D] transition-colors duration-300">Phone Number</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-all duration-300 group-hover:border-[#B5FF6D]/50 group-hover:shadow-[0_0_20px_rgba(181,255,109,0.2)] focus:shadow-[0_0_20px_rgba(181,255,109,0.3)]"
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
               </div>
 
+              <div className="group">
+                <label className="block text-white font-semibold mb-2 group-hover:text-[#B5FF6D] transition-colors duration-300">Subject of Inquiry *</label>
+                <select
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-all duration-300 group-hover:border-[#B5FF6D]/50 group-hover:shadow-[0_0_20px_rgba(181,255,109,0.2)] focus:shadow-[0_0_20px_rgba(181,255,109,0.3)]"
+                  required
+                >
+                  <option value="">Select your inquiry subject</option>
+                  <optgroup label="Development Services">
+                    <option value="enterprise-web-development">Enterprise Web Development</option>
+                    <option value="mobile-app-solutions">Mobile App Solutions</option>
+                    <option value="custom-software">Custom Software Development</option>
+                    <option value="api-development">API Development & Integration</option>
+                  </optgroup>
+                  <optgroup label="Infrastructure & Cloud">
+                    <option value="cloud-infrastructure">Cloud Infrastructure</option>
+                    <option value="devops-implementation">DevOps Implementation</option>
+                    <option value="system-architecture">System Architecture Design</option>
+                    <option value="performance-optimization">Performance Optimization</option>
+                  </optgroup>
+                  <optgroup label="Data & Analytics">
+                    <option value="data-engineering">Data Engineering</option>
+                    <option value="business-intelligence">Business Intelligence</option>
+                    <option value="data-analytics-platform">Data Analytics Platform</option>
+                    <option value="database-design">Database Design & Optimization</option>
+                  </optgroup>
+                  <optgroup label="AI & Machine Learning">
+                    <option value="ai-ml-solutions">AI & Machine Learning Solutions</option>
+                    <option value="predictive-analytics">Predictive Analytics</option>
+                    <option value="computer-vision">Computer Vision</option>
+                    <option value="nlp-processing">Natural Language Processing</option>
+                  </optgroup>
+                  <optgroup label="Security & Compliance">
+                    <option value="cybersecurity">Cybersecurity Services</option>
+                    <option value="security-audit">Security Audit & Assessment</option>
+                    <option value="compliance-implementation">Compliance Implementation</option>
+                    <option value="penetration-testing">Penetration Testing</option>
+                  </optgroup>
+                  <optgroup label="Design & UX">
+                    <option value="ux-ui-design">UX/UI Design</option>
+                    <option value="brand-identity">Brand Identity Design</option>
+                    <option value="user-research">User Research & Testing</option>
+                    <option value="prototyping">Prototyping & Wireframing</option>
+                  </optgroup>
+                  <optgroup label="Digital Marketing">
+                    <option value="digital-marketing">Digital Marketing Strategy</option>
+                    <option value="seo-optimization">SEO Optimization</option>
+                    <option value="content-strategy">Content Strategy</option>
+                    <option value="analytics-implementation">Analytics Implementation</option>
+                  </optgroup>
+                  <optgroup label="Consultation & Strategy">
+                    <option value="digital-transformation">Digital Transformation</option>
+                    <option value="technology-consultation">Technology Consultation</option>
+                    <option value="project-management">Project Management</option>
+                    <option value="team-augmentation">Team Augmentation</option>
+                  </optgroup>
+                  <optgroup label="Other">
+                    <option value="general-inquiry">General Inquiry</option>
+                    <option value="partnership-opportunity">Partnership Opportunity</option>
+                    <option value="career-opportunity">Career Opportunity</option>
+                    <option value="other">Other</option>
+                  </optgroup>
+                </select>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-white font-semibold mb-2">Project Type *</label>
+                <div className="group">
+                  <label className="block text-white font-semibold mb-2 group-hover:text-[#B5FF6D] transition-colors duration-300">Project Type *</label>
                   <select
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-all duration-300 group-hover:border-[#B5FF6D]/50 group-hover:shadow-[0_0_20px_rgba(181,255,109,0.2)] focus:shadow-[0_0_20px_rgba(181,255,109,0.3)]"
                     required
                   >
                     <option value="">Select project type</option>
@@ -259,13 +327,13 @@ const Contact: React.FC = () => {
                     <option value="consultation">Strategic Consultation</option>
                   </select>
                 </div>
-                <div>
-                  <label className="block text-white font-semibold mb-2">Budget Range</label>
+                <div className="group">
+                  <label className="block text-white font-semibold mb-2 group-hover:text-[#B5FF6D] transition-colors duration-300">Budget Range</label>
                   <select
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-all duration-300 group-hover:border-[#B5FF6D]/50 group-hover:shadow-[0_0_20px_rgba(181,255,109,0.2)] focus:shadow-[0_0_20px_rgba(181,255,109,0.3)]"
                   >
                     <option value="">Select budget range</option>
                     <option value="100k-250k">$100K - $250K</option>
@@ -277,13 +345,13 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-white font-semibold mb-2">Timeline</label>
+              <div className="group">
+                <label className="block text-white font-semibold mb-2 group-hover:text-[#B5FF6D] transition-colors duration-300">Timeline</label>
                 <select
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-all duration-300 group-hover:border-[#B5FF6D]/50 group-hover:shadow-[0_0_20px_rgba(181,255,109,0.2)] focus:shadow-[0_0_20px_rgba(181,255,109,0.3)]"
                 >
                   <option value="">Select timeline</option>
                   <option value="immediate">Immediate (ASAP)</option>
@@ -294,14 +362,14 @@ const Contact: React.FC = () => {
                 </select>
               </div>
 
-              <div>
-                <label className="block text-white font-semibold mb-2">Project Details *</label>
+              <div className="group">
+                <label className="block text-white font-semibold mb-2 group-hover:text-[#B5FF6D] transition-colors duration-300">Project Details *</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={5}
-                  className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-colors duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-black border border-gray-600 rounded-lg text-white focus:border-[#B5FF6D] focus:outline-none transition-all duration-300 resize-none group-hover:border-[#B5FF6D]/50 group-hover:shadow-[0_0_20px_rgba(181,255,109,0.2)] focus:shadow-[0_0_20px_rgba(181,255,109,0.3)]"
                   placeholder="Describe your project requirements, goals, and any specific technical needs..."
                   required
                 ></textarea>
@@ -309,10 +377,11 @@ const Contact: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-[#B5FF6D] text-black font-bold rounded-lg hover:bg-[#A3E85C] transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3"
+                className="w-full px-8 py-4 bg-[#B5FF6D] text-black font-bold rounded-lg hover:bg-[#A3E85C] transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 ripple-btn animate-pulse-glow"
               >
                 <Send className="w-5 h-5" />
                 <span>Submit Enterprise Inquiry</span>
+                <div className="ripple-effect"></div>
               </button>
             </form>
           </div>
