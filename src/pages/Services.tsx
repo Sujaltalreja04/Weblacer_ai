@@ -5,6 +5,7 @@ import { Code, Palette, Smartphone, Video, Share2, Star, Check, ArrowRight, Zap,
 import TechBackground from '../components/TechBackground';
 import CornerTechModels from '../components/CornerTechModels';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Services: React.FC = () => {
   const services = {
@@ -486,7 +487,7 @@ const Services: React.FC = () => {
                 >
                   <div
                     className={`relative bg-gray-800/50 p-8 rounded-xl border border-gray-700 shadow-2xl flex flex-col justify-between items-center text-center transition-all duration-500 hover:border-[#B5FF6D] hover:shadow-[#B5FF6D]/40`}
-                    style={{ minHeight: '340px', minWidth: '210px', maxWidth: '250px', aspectRatio: '1 / 1', overflow: 'visible', perspective: '800px' }}
+                    style={{ minHeight: '420px', minWidth: '260px', maxWidth: '320px', aspectRatio: '1 / 1', overflow: 'visible', perspective: '800px' }}
                     onMouseMove={e => {
                       const card = e.currentTarget;
                       const rect = card.getBoundingClientRect();
@@ -535,29 +536,27 @@ const Services: React.FC = () => {
                         ))}
                       </div>
 
-                      <motion.button
-                        whileHover={{ scale: 1.08, boxShadow: '0 0 16px #B5FF6D55' }}
-                        whileTap={{ scale: 0.96 }}
-                        transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                        className={`py-2 rounded-lg font-bold transition-all duration-300 flex items-center justify-center space-x-2 text-sm relative overflow-hidden ripple-btn w-full max-w-[90%] mx-auto ${
-                          pkg.popular
-                            ? 'bg-[#B5FF6D] text-black hover:bg-[#A3E85C]'
-                            : 'bg-gray-700 text-white hover:bg-[#B5FF6D] hover:text-black'
-                        }`}
-                      >
-                        <span>Choose Plan</span>
-                        <motion.span
-                          initial={{ x: 0 }}
-                          whileHover={{ x: 8 }}
-                          transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                      <Link to={`/contact?plan=${encodeURIComponent(pkg.name)}`} className="w-full max-w-[90%] mx-auto">
+                        <motion.button
+                          whileHover={{ scale: 1.08, boxShadow: '0 0 16px #B5FF6D55' }}
+                          whileTap={{ scale: 0.96 }}
+                          transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                          className={`py-2 rounded-lg font-bold transition-all duration-300 flex items-center justify-center space-x-2 text-sm relative overflow-hidden ripple-btn w-full` + (pkg.popular ? ' bg-[#B5FF6D] text-black hover:bg-[#A3E85C]' : ' bg-gray-700 text-white hover:bg-[#B5FF6D] hover:text-black')}
                         >
-                          <ArrowRight className="w-4 h-4" />
-                        </motion.span>
-                        {/* Ripple animation */}
-                        <span className="absolute inset-0 pointer-events-none">
-                          <span className="ripple-effect"></span>
-                        </span>
-                      </motion.button>
+                          <span>Choose Plan</span>
+                          <motion.span
+                            initial={{ x: 0 }}
+                            whileHover={{ x: 8 }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                          >
+                            <ArrowRight className="w-4 h-4" />
+                          </motion.span>
+                          {/* Ripple animation */}
+                          <span className="absolute inset-0 pointer-events-none">
+                            <span className="ripple-effect"></span>
+                          </span>
+                        </motion.button>
+                      </Link>
                     </div>
                   </div>
                 </motion.div>

@@ -17,7 +17,7 @@ const founders = [
   {
     name: 'Hitanshu Patel',
     title: 'Co-Founder & CTO',
-    image: 'https://media.licdn.com/dms/image/v2/D4D03AQF_HC2iiYOadQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721018178044?e=2147483647&v=beta&t=AkDZTmTlVZkyxUtq9IRAOOLwrv1WFviv7K-1FwHUMMY',
+    image: 'https://i.ibb.co/GQJdsNmp/Screenshot-2025-07-06-215018.png',
     expertise: 'Python Development • AI Solutions • Tech Strategy',
     story: `Hitanshu is a Python developer and AI solutions architect. As Co-Founder & CTO, he leads the innovation engine behind Weblancer's tech stack, specializing in intelligent systems, automation pipelines, and scalable backend architectures for high-performance applications.`
   }
@@ -219,12 +219,19 @@ const About: React.FC = () => {
                     }}
                   >
                     {/* Founder Photo */}
-                    <img
-                      src={founder.image}
-                      alt={founder.name}
-                      className="absolute inset-0 w-full h-full object-cover rounded-[3rem] transition-all duration-500 group-hover:blur-md group-hover:scale-105 opacity-90"
-                      style={{ zIndex: 1, background: '#18181b' }}
-                    />
+                    {founder.name === 'Hitanshu Patel' ? (
+                      <img
+                        src={founder.image}
+                        alt={founder.name}
+                        className="absolute inset-0 w-full h-full object-cover rounded-[3rem] transition-all duration-500 group-hover:blur-md group-hover:scale-105 opacity-90"
+                      />
+                    ) : (
+                      <img
+                        src={founder.image}
+                        alt={founder.name}
+                        className="absolute inset-0 w-full h-full object-cover rounded-[3rem] transition-all duration-500 group-hover:blur-md group-hover:scale-105 opacity-90"
+                      />
+                    )}
                     {/* Netflix-Style Overlay */}
                     <div className="absolute inset-0 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/10 rounded-[3rem] backdrop-blur-md"
                       style={{ zIndex: 2 }}

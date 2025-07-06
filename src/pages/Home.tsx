@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChevronDown, ArrowRight, Globe, Zap, Shield, Building, Users, Award, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import TechBackground from '../components/TechBackground';
 import CornerTechModels from '../components/CornerTechModels';
+
+// Counter component for animated numbers
+interface CounterProps {
+  end: number;
+  duration?: number;
+  suffix?: string;
+}
+function Counter({ end, duration = 1500, suffix = '' }: CounterProps) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    let start = 0;
+    const increment = end / (duration / 16);
+    let frame: number;
+    function animate() {
+      start += increment;
+      if ((increment > 0 && start < end) || (increment < 0 && start > end)) {
+        setCount(Math.round(start));
+        frame = requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    }
+    animate();
+    return () => cancelAnimationFrame(frame);
+  }, [end, duration]);
+  return <span>{count}{suffix}</span>;
+}
 
 const Home: React.FC = () => {
   return (
@@ -71,7 +98,7 @@ const Home: React.FC = () => {
                 <div className="flex items-center justify-center mb-4">
                   <Globe className="w-8 h-8 text-[#B5FF6D] group-hover:animate-spin" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">500+</div>
+                <div className="text-3xl font-bold text-white mb-2"><Counter end={500} suffix="+" /></div>
                 <div className="text-[#8A9A5B]">Global Clients</div>
               </div>
             </div>
@@ -81,7 +108,7 @@ const Home: React.FC = () => {
                 <div className="flex items-center justify-center mb-4">
                   <Zap className="w-8 h-8 text-[#B5FF6D] group-hover:animate-pulse" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">99.9%</div>
+                <div className="text-3xl font-bold text-white mb-2"><Counter end={99.9} duration={1800} suffix="%" /></div>
                 <div className="text-[#8A9A5B]">Uptime SLA</div>
               </div>
             </div>
@@ -91,7 +118,7 @@ const Home: React.FC = () => {
                 <div className="flex items-center justify-center mb-4">
                   <Shield className="w-8 h-8 text-[#B5FF6D] group-hover:animate-bounce" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                <div className="text-3xl font-bold text-white mb-2"><Counter end={24} suffix="/7" /></div>
                 <div className="text-[#8A9A5B]">Support</div>
               </div>
             </div>
@@ -142,8 +169,7 @@ const Home: React.FC = () => {
               <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300">
                 <h3 className="text-2xl font-bold text-white mb-4">Global Impact</h3>
                 <p className="text-[#8A9A5B] leading-relaxed">
-                  Through our work, we aim to create positive change that extends beyond individual 
-                  businesses to benefit communities and industries worldwide.
+                  Through our work, we aim to create positive change that extends beyond individual businesses to benefit communities and industries worldwide.
                 </p>
               </div>
             </div>
@@ -155,19 +181,19 @@ const Home: React.FC = () => {
                   {/* Vision Metrics */}
                   <div className="grid grid-cols-2 gap-6 mb-8">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2">150+</div>
+                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2"><Counter end={150} suffix="+" /></div>
                       <div className="text-[#8A9A5B] text-sm">Expert Team</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2">25+</div>
+                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2"><Counter end={25} suffix="+" /></div>
                       <div className="text-[#8A9A5B] text-sm">Countries</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2">500+</div>
+                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2"><Counter end={500} suffix="+" /></div>
                       <div className="text-[#8A9A5B] text-sm">Projects</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2">99.9%</div>
+                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2"><Counter end={99.9} duration={1800} suffix="%" /></div>
                       <div className="text-[#8A9A5B] text-sm">Success Rate</div>
                     </div>
                   </div>
