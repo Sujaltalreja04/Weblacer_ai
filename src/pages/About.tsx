@@ -63,14 +63,15 @@ function ParallaxCard({ children }: { children: React.ReactNode }) {
 }
 
 const About: React.FC = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
+  // Remove framer-motion animation logic
+  // const controls = useAnimation();
+  // const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
-  useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [controls, inView]);
+  // useEffect(() => {
+  //   if (inView) {
+  //     controls.start({ opacity: 1, y: 0 });
+  //   }
+  // }, [controls, inView]);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
@@ -86,12 +87,7 @@ const About: React.FC = () => {
       {/* Tech Background */}
       <TechBackground zIndex="z-0" />
       {/* Main About Content */}
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 40 }}
-        animate={controls}
-        transition={{ duration: 1, ease: 'easeOut' }}
-      >
+      <div>
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
           <div className="absolute inset-0 perspective-[4000px]">
@@ -127,6 +123,76 @@ const About: React.FC = () => {
                 digital solutions. We partner with Fortune 500 companies and emerging startups 
                 to deliver scalable, secure, and innovative technology platforms.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Services Section */}
+        <section className="py-16 bg-black relative z-10">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-white mb-10 text-center">Our Services</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <a href="/services#web-development" className="group bg-gray-800/60 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 flex flex-col items-center text-center">
+                <Building className="w-10 h-10 text-[#B5FF6D] mb-4 group-hover:animate-pulse" />
+                <h3 className="text-xl font-bold text-white mb-2">Web Development</h3>
+                <p className="text-[#8A9A5B] mb-2">Modern, responsive websites for your business growth.</p>
+              </a>
+              <a href="/services#app-development" className="group bg-gray-800/60 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 flex flex-col items-center text-center">
+                <Users className="w-10 h-10 text-[#B5FF6D] mb-4 group-hover:animate-pulse" />
+                <h3 className="text-xl font-bold text-white mb-2">App Development</h3>
+                <p className="text-[#8A9A5B] mb-2">Mobile and web apps tailored to your needs.</p>
+              </a>
+              <a href="/services#video-editing" className="group bg-gray-800/60 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 flex flex-col items-center text-center">
+                <Award className="w-10 h-10 text-[#B5FF6D] mb-4 group-hover:animate-pulse" />
+                <h3 className="text-xl font-bold text-white mb-2">Video Editing</h3>
+                <p className="text-[#8A9A5B] mb-2">Professional video editing for marketing and branding.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Core Values Section */}
+        <section className="py-16 bg-gradient-to-b from-black to-gray-900 relative z-10">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <h2 className="text-4xl font-bold text-white mb-8">Our Core Values</h2>
+            <div className="grid md:grid-cols-4 gap-8">
+              <div className="bg-gray-800/60 p-6 rounded-xl border border-gray-700 flex flex-col items-center">
+                <Shield className="w-8 h-8 text-[#B5FF6D] mb-2" />
+                <h4 className="text-lg font-semibold text-white mb-1">Integrity</h4>
+                <p className="text-[#8A9A5B] text-sm">We act with honesty and transparency in all we do.</p>
+              </div>
+              <div className="bg-gray-800/60 p-6 rounded-xl border border-gray-700 flex flex-col items-center">
+                <Zap className="w-8 h-8 text-[#B5FF6D] mb-2" />
+                <h4 className="text-lg font-semibold text-white mb-1">Innovation</h4>
+                <p className="text-[#8A9A5B] text-sm">We embrace creativity and new ideas to drive progress.</p>
+              </div>
+              <div className="bg-gray-800/60 p-6 rounded-xl border border-gray-700 flex flex-col items-center">
+                <Users className="w-8 h-8 text-[#B5FF6D] mb-2" />
+                <h4 className="text-lg font-semibold text-white mb-1">Customer Focus</h4>
+                <p className="text-[#8A9A5B] text-sm">We put our clients’ needs at the center of every decision.</p>
+              </div>
+              <div className="bg-gray-800/60 p-6 rounded-xl border border-gray-700 flex flex-col items-center">
+                <Award className="w-8 h-8 text-[#B5FF6D] mb-2" />
+                <h4 className="text-lg font-semibold text-white mb-1">Excellence</h4>
+                <p className="text-[#8A9A5B] text-sm">We strive for the highest quality in our work and results.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission & Vision Section */}
+        <section className="py-16 bg-black relative z-10">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-4xl font-bold text-white mb-6">Our Mission & Vision</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-gray-800/60 p-8 rounded-xl border border-gray-700 flex flex-col items-center">
+                <h3 className="text-2xl font-bold text-[#B5FF6D] mb-2">Mission</h3>
+                <p className="text-[#8A9A5B] text-lg">To empower businesses with innovative digital solutions that drive growth and success.</p>
+              </div>
+              <div className="bg-gray-800/60 p-8 rounded-xl border border-gray-700 flex flex-col items-center">
+                <h3 className="text-2xl font-bold text-[#B5FF6D] mb-2">Vision</h3>
+                <p className="text-[#8A9A5B] text-lg">To become a trusted technology partner for businesses worldwide, shaping the future of digital innovation.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -288,69 +354,31 @@ const About: React.FC = () => {
         <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-white mb-6">Our Team & Culture</h2>
+              <h2 className="text-5xl font-bold text-white mb-6">What Makes Us Unique</h2>
               <p className="text-xl text-[#8A9A5B] max-w-3xl mx-auto">
-                We're a diverse team of innovators, creators, and problem-solvers united by our passion for technology and commitment to excellence.
+                As a new freelance business, we offer a fresh, client-focused approach and unique advantages you won't find with larger agencies.
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group">
-                <div className="flex items-center space-x-3 mb-3">
-                  <Users className="w-6 h-6 text-[#B5FF6D] group-hover:animate-pulse" />
-                  <span className="text-white font-semibold">Team Size</span>
-                </div>
-                <p className="text-3xl font-bold text-[#B5FF6D]">150+</p>
-                <p className="text-[#8A9A5B] text-sm">Expert Professionals</p>
+              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group flex flex-col items-center text-center">
+                <Users className="w-8 h-8 text-[#B5FF6D] mb-3 group-hover:animate-pulse" />
+                <h4 className="text-lg font-bold text-white mb-2">Personalized Attention</h4>
+                <p className="text-[#8A9A5B] text-sm">Work directly with our founders and core team for a truly tailored experience.</p>
               </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group">
-                <div className="flex items-center space-x-3 mb-3">
-                  <TrendingUp className="w-6 h-6 text-[#B5FF6D] group-hover:animate-bounce" />
-                  <span className="text-white font-semibold">Growth Rate</span>
-                </div>
-                <p className="text-3xl font-bold text-[#B5FF6D]">300%</p>
-                <p className="text-[#8A9A5B] text-sm">Year over Year</p>
+              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group flex flex-col items-center text-center">
+                <Zap className="w-8 h-8 text-[#B5FF6D] mb-3 group-hover:animate-bounce" />
+                <h4 className="text-lg font-bold text-white mb-2">Agile & Flexible</h4>
+                <p className="text-[#8A9A5B] text-sm">We adapt quickly to your needs and deliver solutions with speed and creativity.</p>
               </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group">
-                <Award className="w-6 h-6 text-[#B5FF6D] group-hover:animate-spin" />
-                <span className="text-white font-semibold">Industry Awards</span>
+              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group flex flex-col items-center text-center">
+                <User className="w-8 h-8 text-[#B5FF6D] mb-3 group-hover:animate-spin" />
+                <h4 className="text-lg font-bold text-white mb-2">Direct Founder Access</h4>
+                <p className="text-[#8A9A5B] text-sm">You always have a direct line to the people who care most about your project.</p>
               </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group">
-                <Building className="w-6 h-6 text-[#B5FF6D] group-hover:animate-pulse" />
-                <span className="text-white font-semibold">Enterprise Clients</span>
-              </div>
-            </div>
-
-            {/* Mission & Values */}
-            <div className="grid lg:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-[#B5FF6D]/5 to-[#8A9A5B]/5 p-8 rounded-xl border border-[#B5FF6D]/30">
-                <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
-                <p className="text-[#8A9A5B] leading-relaxed">
-                  To empower businesses worldwide with cutting-edge technology solutions that 
-                  drive innovation, enhance efficiency, and create sustainable competitive advantages.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#B5FF6D]/5 to-[#8A9A5B]/5 p-8 rounded-xl border border-[#B5FF6D]/30">
-                <h3 className="text-2xl font-bold text-white mb-4">Our Values</h3>
-                <ul className="text-[#8A9A5B] space-y-2">
-                  <li>• Innovation & Excellence</li>
-                  <li>• Client-Centric Approach</li>
-                  <li>• Transparency & Integrity</li>
-                  <li>• Continuous Learning</li>
-                  <li>• Global Collaboration</li>
-                </ul>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#B5FF6D]/5 to-[#8A9A5B]/5 p-8 rounded-xl border border-[#B5FF6D]/30">
-                <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
-                <p className="text-[#8A9A5B] leading-relaxed">
-                  To be the world's most trusted technology partner, shaping the future of digital 
-                  innovation and creating lasting impact across industries and communities.
-                </p>
+              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group flex flex-col items-center text-center">
+                <Award className="w-8 h-8 text-[#B5FF6D] mb-3 group-hover:animate-pulse" />
+                <h4 className="text-lg font-bold text-white mb-2">Early Adopter Benefits</h4>
+                <p className="text-[#8A9A5B] text-sm">Get special pricing, extra support, and priority as one of our first clients.</p>
               </div>
             </div>
           </div>
@@ -465,7 +493,7 @@ const About: React.FC = () => {
             </div>
           </div>
         </section>
-      </motion.div>
+      </div>
     </div>
   );
 };

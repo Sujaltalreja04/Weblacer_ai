@@ -581,11 +581,12 @@ const Services: React.FC = () => {
                         ))}
                       </div>
 
-                      <button onClick={() => { setModalOpen(true); setModalSubject(pkg.name); }} className="w-full max-w-[90%] mx-auto">
+                      <div className="w-full max-w-[90%] mx-auto">
                         <motion.button
                           whileHover={{ scale: 1.08, boxShadow: '0 0 16px #B5FF6D55' }}
                           whileTap={{ scale: 0.96 }}
                           transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                          onClick={() => { setModalOpen(true); setModalSubject(pkg.name); }}
                           className={`py-2 rounded-lg font-bold transition-all duration-300 flex items-center justify-center space-x-2 text-sm relative overflow-hidden ripple-btn w-full` + (pkg.popular ? ' bg-[#B5FF6D] text-black hover:bg-[#A3E85C]' : ' bg-gray-700 text-white hover:bg-[#B5FF6D] hover:text-black')}
                         >
                           <span>Choose Plan</span>
@@ -601,7 +602,7 @@ const Services: React.FC = () => {
                             <span className="ripple-effect"></span>
                           </span>
                         </motion.button>
-                      </button>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
