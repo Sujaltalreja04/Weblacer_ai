@@ -6,6 +6,49 @@ import TechBackground from '../components/TechBackground';
 import CornerTechModels from '../components/CornerTechModels';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm, ValidationError } from '@formspree/react';
+
+function PlanModal({ open, onClose, subject }: { open: boolean, onClose: () => void, subject: string }) {
+  const [state, handleSubmit] = useForm("xzzgqlqn");
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+      <div className="bg-black p-8 rounded-2xl border-2 border-[#B5FF6D] shadow-2xl relative max-w-md w-full" style={{ boxShadow: '0 0 32px 8px #B5FF6D88' }}>
+        <button onClick={onClose} className="absolute top-4 right-4 text-[#B5FF6D] text-2xl font-bold">&times;</button>
+        <h2 className="text-2xl font-bold text-white mb-4">Get Started with {subject}</h2>
+        {state.succeeded ? (
+          <p className="text-[#B5FF6D] text-lg font-semibold">Thanks for your interest! We'll contact you soon.</p>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-[#B5FF6D] font-semibold mb-1">Name</label>
+              <input id="name" type="text" name="name" required className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-[#B5FF6D]/40 text-white focus:border-[#B5FF6D] outline-none" />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-[#B5FF6D] font-semibold mb-1">Phone Number</label>
+              <input id="phone" type="tel" name="phone" required className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-[#B5FF6D]/40 text-white focus:border-[#B5FF6D] outline-none" />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-[#B5FF6D] font-semibold mb-1">Email</label>
+              <input id="email" type="email" name="email" required className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-[#B5FF6D]/40 text-white focus:border-[#B5FF6D] outline-none" />
+              <ValidationError prefix="Email" field="email" errors={state.errors} />
+            </div>
+            <div>
+              <label htmlFor="subject" className="block text-[#B5FF6D] font-semibold mb-1">Subject</label>
+              <input id="subject" type="text" name="subject" value={subject} readOnly className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-[#B5FF6D]/40 text-white focus:border-[#B5FF6D] outline-none" />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-[#B5FF6D] font-semibold mb-1">Message</label>
+              <textarea id="message" name="message" rows={3} className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-[#B5FF6D]/40 text-white focus:border-[#B5FF6D] outline-none" placeholder="Anything else you'd like to share?" />
+              <ValidationError prefix="Message" field="message" errors={state.errors} />
+            </div>
+            <button type="submit" disabled={state.submitting} className="w-full py-3 bg-[#B5FF6D] text-black font-bold rounded-lg hover:bg-[#A3E85C] transition-all duration-300 mt-2">Submit</button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
 
 const Services: React.FC = () => {
   const services = {
@@ -373,6 +416,8 @@ const Services: React.FC = () => {
 
   const serviceKeys = Object.keys(services) as Array<keyof typeof services>;
   const [activeService, setActiveService] = useState<keyof typeof services>(serviceKeys[0]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalSubject, setModalSubject] = useState('');
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
@@ -536,7 +581,7 @@ const Services: React.FC = () => {
                         ))}
                       </div>
 
-                      <Link to={`/contact?plan=${encodeURIComponent(pkg.name)}`} className="w-full max-w-[90%] mx-auto">
+                      <button onClick={() => { setModalOpen(true); setModalSubject(pkg.name); }} className="w-full max-w-[90%] mx-auto">
                         <motion.button
                           whileHover={{ scale: 1.08, boxShadow: '0 0 16px #B5FF6D55' }}
                           whileTap={{ scale: 0.96 }}
@@ -556,7 +601,7 @@ const Services: React.FC = () => {
                             <span className="ripple-effect"></span>
                           </span>
                         </motion.button>
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </motion.div>
@@ -603,6 +648,7 @@ const Services: React.FC = () => {
           </div>
         </section>
       </motion.div>
+      <PlanModal open={modalOpen} onClose={() => setModalOpen(false)} subject={modalSubject} />
     </div>
   );
 };

@@ -148,8 +148,8 @@ const About: React.FC = () => {
                 
                 <div className="grid grid-cols-2 gap-6 mt-8">
                   <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-                    <div className="text-3xl font-bold text-[#B5FF6D] mb-2">2018</div>
-                    <div className="text-[#8A9A5B]">Founded</div>
+                    <div className="text-3xl font-bold text-[#B5FF6D] mb-2">2025</div>
+                    <div className="text-[#8A9A5B]">Founded in 2025</div>
                   </div>
                   <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
                     <div className="text-3xl font-bold text-[#B5FF6D] mb-2">500+</div>
@@ -255,35 +255,32 @@ const About: React.FC = () => {
           </div>
         </section>
 
-        {/* Our Team */}
+        {/* Our Mission & Vision */}
         <section className="py-20 bg-black relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-white mb-6">Our Team</h2>
-              <p className="text-xl text-[#8A9A5B] max-w-3xl mx-auto">
-                Meet the talented people who make it all possible.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {team.map((member, idx) => (
-                <ParallaxCard key={member.name}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7 + idx * 0.1, ease: 'easeOut' }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    className="bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl p-6 rounded-2xl flex flex-col items-center text-center transition-all duration-500 hover:scale-105 hover:shadow-[#B5FF6D]/30"
-                  >
-                    <div className="w-20 h-20 rounded-full bg-[#B5FF6D]/20 border-4 border-[#B5FF6D] flex items-center justify-center mb-4">
-                      <User className="w-10 h-10 text-[#B5FF6D]" />
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                    <div className="text-[#8A9A5B] font-semibold mb-2">{member.title}</div>
-                    <p className="text-gray-300 text-sm">{member.bio}</p>
-                  </motion.div>
-                </ParallaxCard>
-              ))}
-            </div>
+          <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <h2 className="text-5xl font-bold text-white mb-6">Our Mission & Vision</h2>
+            <p className="text-xl text-[#8A9A5B] mb-8">At Weblancer, our mission is to empower businesses with innovative digital solutions that drive growth and success. We believe in building strong partnerships and delivering real value to every client. Our vision is to become a trusted technology partner for businesses worldwide.</p>
+          </div>
+        </section>
+
+        {/* Why Choose Us */}
+        <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <h2 className="text-4xl font-bold text-white mb-6">Why Choose Us</h2>
+            <ul className="text-xl text-[#8A9A5B] mb-8 space-y-4 list-disc list-inside text-left mx-auto max-w-2xl">
+              <li>Client-focused approach and personalized solutions</li>
+              <li>Commitment to quality and transparency</li>
+              <li>Passion for innovation and continuous improvement</li>
+              <li>Reliable support and clear communication</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Founders’ Message */}
+        <section className="py-20 bg-black relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <h2 className="text-4xl font-bold text-white mb-6">Founders’ Message</h2>
+            <p className="text-xl text-[#8A9A5B] mb-8">Thank you for visiting Weblancer. As founders, we started this company with a simple belief: technology should empower, not complicate. We are dedicated to helping your business grow and succeed in the digital world. We look forward to working with you!</p>
           </div>
         </section>
 
@@ -317,21 +314,13 @@ const About: React.FC = () => {
               </div>
 
               <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group">
-                <div className="flex items-center space-x-3 mb-3">
-                  <Award className="w-6 h-6 text-[#B5FF6D] group-hover:animate-spin" />
-                  <span className="text-white font-semibold">Industry Awards</span>
-                </div>
-                <p className="text-3xl font-bold text-[#B5FF6D]">25+</p>
-                <p className="text-[#8A9A5B] text-sm">Recognition & Certifications</p>
+                <Award className="w-6 h-6 text-[#B5FF6D] group-hover:animate-spin" />
+                <span className="text-white font-semibold">Industry Awards</span>
               </div>
 
               <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 group">
-                <div className="flex items-center space-x-3 mb-3">
-                  <Building className="w-6 h-6 text-[#B5FF6D] group-hover:animate-pulse" />
-                  <span className="text-white font-semibold">Enterprise Clients</span>
-                </div>
-                <p className="text-3xl font-bold text-[#B5FF6D]">50+</p>
-                <p className="text-[#8A9A5B] text-sm">Fortune 500 Companies</p>
+                <Building className="w-6 h-6 text-[#B5FF6D] group-hover:animate-pulse" />
+                <span className="text-white font-semibold">Enterprise Clients</span>
               </div>
             </div>
 
@@ -414,27 +403,51 @@ const About: React.FC = () => {
                 </div>
               </div>
 
+              {/* Social Media Management */}
               <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300">
-                <Cloud className="w-12 h-12 text-[#B5FF6D] mb-4" />
-                <h3 className="text-xl font-bold text-white mb-4">Cloud & DevOps</h3>
+                <Users className="w-12 h-12 text-[#B5FF6D] mb-4" />
+                <h3 className="text-xl font-bold text-white mb-4">Social Media Management</h3>
                 <div className="space-y-2 text-[#8A9A5B]">
-                  <div>• AWS, Azure, GCP</div>
-                  <div>• Docker & Kubernetes</div>
-                  <div>• CI/CD Pipelines</div>
-                  <div>• Infrastructure as Code</div>
-                  <div>• Monitoring & Analytics</div>
+                  <div>• Strategy & Planning</div>
+                  <div>• Content Scheduling</div>
+                  <div>• Engagement & Analytics</div>
+                  <div>• Platform Optimization</div>
                 </div>
               </div>
 
+              {/* Video Editing */}
               <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300">
-                <Shield className="w-12 h-12 text-[#B5FF6D] mb-4" />
-                <h3 className="text-xl font-bold text-white mb-4">Security & Compliance</h3>
+                <Zap className="w-12 h-12 text-[#B5FF6D] mb-4" />
+                <h3 className="text-xl font-bold text-white mb-4">Video Editing</h3>
                 <div className="space-y-2 text-[#8A9A5B]">
-                  <div>• OAuth & JWT</div>
-                  <div>• SSL/TLS Encryption</div>
-                  <div>• GDPR & HIPAA Compliance</div>
-                  <div>• Penetration Testing</div>
-                  <div>• Security Audits</div>
+                  <div>• Promotional Videos</div>
+                  <div>• Social Media Clips</div>
+                  <div>• Motion Graphics</div>
+                  <div>• Post-Production</div>
+                </div>
+              </div>
+
+              {/* Content Creation */}
+              <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300">
+                <Award className="w-12 h-12 text-[#B5FF6D] mb-4" />
+                <h3 className="text-xl font-bold text-white mb-4">Content Creation</h3>
+                <div className="space-y-2 text-[#8A9A5B]">
+                  <div>• Blog & Article Writing</div>
+                  <div>• Visual Content</div>
+                  <div>• Infographics</div>
+                  <div>• Creative Campaigns</div>
+                </div>
+              </div>
+
+              {/* Copywriting */}
+              <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300">
+                <User className="w-12 h-12 text-[#B5FF6D] mb-4" />
+                <h3 className="text-xl font-bold text-white mb-4">Copywriting</h3>
+                <div className="space-y-2 text-[#8A9A5B]">
+                  <div>• Website Copy</div>
+                  <div>• Ad Copy</div>
+                  <div>• Product Descriptions</div>
+                  <div>• Brand Messaging</div>
                 </div>
               </div>
 

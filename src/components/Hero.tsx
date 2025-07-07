@@ -1,6 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChevronDown, ArrowRight, Globe, Zap, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+// Counter component for animated numbers
+interface CounterProps {
+  end: number;
+  duration?: number;
+  suffix?: string;
+}
+function Counter({ end, duration = 1500, suffix = '' }: CounterProps) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    let start = 0;
+    const increment = end / (duration / 16);
+    let frame: number;
+    function animate() {
+      start += increment;
+      if ((increment > 0 && start < end) || (increment < 0 && start > end)) {
+        setCount(Math.round(start));
+        frame = requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    }
+    animate();
+    return () => cancelAnimationFrame(frame);
+  }, [end, duration]);
+  return <span>{count}{suffix}</span>;
+}
 
 const Hero: React.FC = () => {
   return (
@@ -112,7 +139,7 @@ const Hero: React.FC = () => {
               <div className="flex items-center justify-center mb-4">
                 <Globe className="w-8 h-8 text-[#B5FF6D] group-hover:animate-spin" />
               </div>
-              <div className="text-3xl font-bold text-white mb-2">500+</div>
+              <div className="text-3xl font-bold text-white mb-2"><Counter end={500} suffix="+" /></div>
               <div className="text-[#8A9A5B]">Global Clients</div>
             </div>
           </div>
@@ -122,7 +149,7 @@ const Hero: React.FC = () => {
               <div className="flex items-center justify-center mb-4">
                 <Zap className="w-8 h-8 text-[#B5FF6D] group-hover:animate-pulse" />
               </div>
-              <div className="text-3xl font-bold text-white mb-2">99.9%</div>
+              <div className="text-3xl font-bold text-white mb-2"><Counter end={99.9} duration={1800} suffix="%" /></div>
               <div className="text-[#8A9A5B]">Uptime SLA</div>
             </div>
           </div>
@@ -132,7 +159,7 @@ const Hero: React.FC = () => {
               <div className="flex items-center justify-center mb-4">
                 <Shield className="w-8 h-8 text-[#B5FF6D] group-hover:animate-bounce" />
               </div>
-              <div className="text-3xl font-bold text-white mb-2">24/7</div>
+              <div className="text-3xl font-bold text-white mb-2"><Counter end={24} suffix="/7" /></div>
               <div className="text-[#8A9A5B]">Support</div>
             </div>
           </div>
@@ -153,4 +180,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default Hero; 

@@ -18,25 +18,11 @@ const Services: React.FC = () => {
       category: "Mobile"
     },
     {
-      icon: Cloud,
-      title: "Cloud Infrastructure",
-      description: "Robust cloud architecture and DevOps implementation",
-      tech: ["AWS", "Azure", "Docker", "Kubernetes"],
-      category: "Infrastructure"
-    },
-    {
       icon: Database,
       title: "Data Engineering",
       description: "Big data solutions and analytics platforms",
       tech: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"],
       category: "Data"
-    },
-    {
-      icon: Shield,
-      title: "Cybersecurity",
-      description: "Comprehensive security audits and implementation",
-      tech: ["Penetration Testing", "OWASP", "SSL/TLS", "OAuth"],
-      category: "Security"
     },
     {
       icon: Cpu,

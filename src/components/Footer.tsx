@@ -50,12 +50,13 @@ const Footer: React.FC = () => {
             <div>
               <h4 className="text-white font-bold text-lg mb-6">Enterprise Services</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Web Development</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Mobile Applications</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Cloud Infrastructure</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Data Engineering</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">AI/ML Solutions</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Cybersecurity</a></li>
+                <li><a href="/services#web-development" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Web Development</a></li>
+                <li><a href="/services#app-development" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Mobile Applications</a></li>
+                <li><a href="/services#video-editing" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Video Editing</a></li>
+                <li><a href="/services#social-media-management" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Social Media Management</a></li>
+                <li><a href="/services#logo-designing" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Logo Designing</a></li>
+                <li><a href="/services" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Data Engineering</a></li>
+                <li><a href="/services" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">AI/ML Solutions</a></li>
               </ul>
             </div>
 
@@ -63,12 +64,10 @@ const Footer: React.FC = () => {
             <div>
               <h4 className="text-white font-bold text-lg mb-6">Company</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">About Us</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Case Studies</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Careers</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Press & Media</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Partner Program</a></li>
-                <li><a href="#" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Contact</a></li>
+                <li><a href="/" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Home Page</a></li>
+                <li><a href="/about" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">About Us</a></li>
+                <li><a href="/contact" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Contact Us</a></li>
+                <li><a href="/services" className="text-[#8A9A5B] hover:text-[#B5FF6D] transition-colors duration-300">Services & Packages</a></li>
               </ul>
             </div>
           </div>
@@ -90,7 +89,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="text-center md:text-left">
                 <h5 className="text-white font-semibold mb-2">Asia Pacific</h5>
-                <p className="text-[#8A9A5B] text-sm">Singapore • Tokyo • Sydney</p>
+                <p className="text-[#8A9A5B] text-sm">Singapore • Tokyo • Sydney • India</p>
               </div>
             </div>
           </div>
@@ -115,28 +114,31 @@ const Footer: React.FC = () => {
               {/* Social Links */}
               <div className="flex space-x-4">
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/company/web%CA%9Fancer/?viewAsMember=true" 
                   className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#B5FF6D] hover:text-black transition-all duration-300 transform hover:scale-110 group border border-gray-700 hover:border-[#B5FF6D]"
                   aria-label="LinkedIn"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   <Linkedin className="w-5 h-5 text-[#B5FF6D] group-hover:text-black" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://github.com/Sujaltalreja04" 
                   className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#B5FF6D] hover:text-black transition-all duration-300 transform hover:scale-110 group border border-gray-700 hover:border-[#B5FF6D]"
                   aria-label="GitHub"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   <Github className="w-5 h-5 text-[#B5FF6D] group-hover:text-black" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://x.com/WeblancerA81312" 
                   className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#B5FF6D] hover:text-black transition-all duration-300 transform hover:scale-110 group border border-gray-700 hover:border-[#B5FF6D]"
                   aria-label="Twitter"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   <Twitter className="w-5 h-5 text-[#B5FF6D] group-hover:text-black" />
                 </a>
                 <a 
-                  href="#" 
+                  href="mailto:weblancerai04@gmail.com" 
                   className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#B5FF6D] hover:text-black transition-all duration-300 transform hover:scale-110 group border border-gray-700 hover:border-[#B5FF6D]"
                   aria-label="Email"
                 >

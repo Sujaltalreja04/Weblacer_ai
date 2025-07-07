@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
             ))}
             
             <Link
-              to="/contact"
+              to="/services"
               className="px-6 py-3 bg-[#B5FF6D] text-black font-bold rounded-lg hover:bg-[#A3E85C] transform hover:scale-105 transition-all duration-300"
             >
               Get Started
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
                 </Link>
               ))}
               <Link
-                to="/contact"
+                to="/services"
                 onClick={() => setIsOpen(false)}
                 className="block w-full px-6 py-3 bg-[#B5FF6D] text-black font-bold rounded-lg hover:bg-[#A3E85C] text-center transition-colors duration-300"
               >

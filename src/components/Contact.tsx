@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
             {Array.from({ length: 512 }).map((_, i) => (
               <div 
                 key={i} 
-                className="border border-[#B5FF6D]/20 bg-gradient-to-t from-[#B5FF6D]/5 to-transparent animate-pulse"
+                className="border border-[#B5FF6D]/20 bg-gradient-to-t from-[#B5FF6D]/5 to-transparent"
                 style={{ 
                   animationDelay: `${i * 30}ms`,
                   height: `${Math.random() * 100 + 50}px`,
@@ -49,20 +49,20 @@ const Contact: React.FC = () => {
 
         {/* Floating Communication Elements */}
         <div className="absolute top-20 right-20 perspective-[2000px]">
-          <div className="relative w-96 h-96 animate-spin-slow">
+          <div className="relative w-96 h-96">
             {/* Communication Satellites */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#B5FF6D]/20 to-[#8A9A5B]/20 rounded-lg border border-[#B5FF6D]/40 flex items-center justify-center animate-float">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#B5FF6D]/20 to-[#8A9A5B]/20 rounded-lg border border-[#B5FF6D]/40 flex items-center justify-center" style={{ boxShadow: '0 0 24px 4px #B5FF6D55' }}>
                 <Mail className="w-8 h-8 text-[#B5FF6D]" />
               </div>
             </div>
             <div className="absolute right-0 top-1/2 transform translate-x-8 -translate-y-1/2">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#B5FF6D]/20 to-[#8A9A5B]/20 rounded-lg border border-[#B5FF6D]/40 flex items-center justify-center animate-float-delayed">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#B5FF6D]/20 to-[#8A9A5B]/20 rounded-lg border border-[#B5FF6D]/40 flex items-center justify-center" style={{ boxShadow: '0 0 24px 4px #B5FF6D55' }}>
                 <Phone className="w-8 h-8 text-[#B5FF6D]" />
               </div>
             </div>
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#B5FF6D]/20 to-[#8A9A5B]/20 rounded-lg border border-[#B5FF6D]/40 flex items-center justify-center animate-float-slow">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#B5FF6D]/20 to-[#8A9A5B]/20 rounded-lg border border-[#B5FF6D]/40 flex items-center justify-center" style={{ boxShadow: '0 0 24px 4px #B5FF6D55' }}>
                 <MessageCircle className="w-8 h-8 text-[#B5FF6D]" />
               </div>
             </div>
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
             {Array.from({ length: 12 }).map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 bg-gradient-to-t from-[#B5FF6D]/40 to-transparent animate-pulse"
+                className="absolute w-1 bg-gradient-to-t from-[#B5FF6D]/40 to-transparent"
                 style={{
                   left: `${i * 20}px`,
                   height: `${Math.random() * 200 + 100}px`,
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 px-6 py-3 bg-[#B5FF6D]/10 border border-[#B5FF6D]/30 rounded-full mb-8 animate-pulse-glow">
+          <div className="inline-flex items-center space-x-2 px-6 py-3 bg-[#B5FF6D]/10 border border-[#B5FF6D]/30 rounded-full mb-8">
             <Building className="w-5 h-5 text-[#B5FF6D]" />
             <span className="text-[#B5FF6D] font-semibold">Enterprise Partnerships</span>
           </div>
@@ -110,40 +110,40 @@ const Contact: React.FC = () => {
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12 animate-pulse-glow">
+                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12" style={{ boxShadow: '0 0 24px 4px #B5FF6D55' }}>
                     <Mail className="w-8 h-8 text-[#B5FF6D]" />
                   </div>
                   <div>
-                    <p className="text-white font-bold text-lg">Enterprise Sales</p>
-                    <p className="text-[#8A9A5B]">enterprise@weblancer.com</p>
+                    <p className="text-white font-bold text-lg">Email</p>
+                    <p className="text-[#8A9A5B]">weblancerai04@gmail.com</p>
                     <p className="text-[#8A9A5B] text-sm">24/7 Response Guarantee</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12 animate-pulse-glow">
+                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12" style={{ boxShadow: '0 0 24px 4px #B5FF6D55' }}>
                     <Phone className="w-8 h-8 text-[#B5FF6D]" />
                   </div>
                   <div>
-                    <p className="text-white font-bold text-lg">Direct Line</p>
-                    <p className="text-[#8A9A5B]">+1 (800) WEBLANCER</p>
-                    <p className="text-[#8A9A5B] text-sm">Mon-Fri 8AM-8PM EST</p>
+                    <p className="text-white font-bold text-lg">Phone Numbers</p>
+                    <p className="text-[#8A9A5B]">7574021120, 9925607120</p>
+                    <p className="text-[#8A9A5B] text-sm">Available 9AM-9PM IST</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12 animate-pulse-glow">
+                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12" style={{ boxShadow: '0 0 24px 4px #B5FF6D55' }}>
                     <MapPin className="w-8 h-8 text-[#B5FF6D]" />
                   </div>
                   <div>
-                    <p className="text-white font-bold text-lg">Global Headquarters</p>
-                    <p className="text-[#8A9A5B]">New York • London • Singapore</p>
-                    <p className="text-[#8A9A5B] text-sm">Worldwide Service Delivery</p>
+                    <p className="text-white font-bold text-lg">Office Location</p>
+                    <p className="text-[#8A9A5B]">Ahmedabad, Gujarat, India</p>
+                    <p className="text-[#8A9A5B] text-sm">Serving clients globally</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12 animate-pulse-glow">
+                  <div className="w-16 h-16 bg-[#B5FF6D]/10 rounded-xl flex items-center justify-center border border-[#B5FF6D]/30 group-hover:bg-[#B5FF6D]/20 transition-colors duration-300 transform group-hover:rotateY-12" style={{ boxShadow: '0 0 24px 4px #B5FF6D55' }}>
                     <Calendar className="w-8 h-8 text-[#B5FF6D]" />
                   </div>
                   <div>
@@ -156,26 +156,26 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Enterprise Benefits */}
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 animate-glow-border">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700">
               <div className="flex items-center space-x-3 mb-6">
                 <Users className="w-6 h-6 text-[#B5FF6D]" />
                 <span className="text-white font-bold text-xl">Enterprise Advantages</span>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full"></div>
                   <span className="text-[#8A9A5B]">Dedicated project manager</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full"></div>
                   <span className="text-[#8A9A5B]">24/7 priority support</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full"></div>
                   <span className="text-[#8A9A5B]">Custom SLA agreements</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-[#B5FF6D] rounded-full"></div>
                   <span className="text-[#8A9A5B]">Scalable team allocation</span>
                 </div>
               </div>
@@ -183,7 +183,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Enterprise Contact Form */}
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 animate-glow-border">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700" style={{ boxShadow: '0 0 32px 8px #B5FF6D55' }}>
             <h3 className="text-2xl font-bold text-white mb-6">Start Your Enterprise Project</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -377,7 +377,7 @@ const Contact: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-[#B5FF6D] text-black font-bold rounded-lg hover:bg-[#A3E85C] transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 ripple-btn animate-pulse-glow"
+                className="w-full px-8 py-4 bg-[#B5FF6D] text-black font-bold rounded-lg hover:bg-[#A3E85C] transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 ripple-btn"
               >
                 <Send className="w-5 h-5" />
                 <span>Submit Enterprise Inquiry</span>

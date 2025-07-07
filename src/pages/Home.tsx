@@ -9,8 +9,9 @@ interface CounterProps {
   end: number;
   duration?: number;
   suffix?: string;
+  decimals?: number;
 }
-function Counter({ end, duration = 1500, suffix = '' }: CounterProps) {
+function Counter({ end, duration = 1500, suffix = '', decimals = 0 }: CounterProps) {
   const [count, setCount] = useState(0);
   useEffect(() => {
     let start = 0;
@@ -19,7 +20,7 @@ function Counter({ end, duration = 1500, suffix = '' }: CounterProps) {
     function animate() {
       start += increment;
       if ((increment > 0 && start < end) || (increment < 0 && start > end)) {
-        setCount(Math.round(start));
+        setCount(start);
         frame = requestAnimationFrame(animate);
       } else {
         setCount(end);
@@ -28,7 +29,7 @@ function Counter({ end, duration = 1500, suffix = '' }: CounterProps) {
     animate();
     return () => cancelAnimationFrame(frame);
   }, [end, duration]);
-  return <span>{count}{suffix}</span>;
+  return <span>{count.toFixed(decimals)}{suffix}</span>;
 }
 
 const Home: React.FC = () => {
@@ -108,7 +109,7 @@ const Home: React.FC = () => {
                 <div className="flex items-center justify-center mb-4">
                   <Zap className="w-8 h-8 text-[#B5FF6D] group-hover:animate-pulse" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2"><Counter end={99.9} duration={1800} suffix="%" /></div>
+                <div className="text-3xl font-bold text-white mb-2"><Counter end={99.9} duration={1800} suffix="%" decimals={1} /></div>
                 <div className="text-[#8A9A5B]">Uptime SLA</div>
               </div>
             </div>
@@ -193,7 +194,7 @@ const Home: React.FC = () => {
                       <div className="text-[#8A9A5B] text-sm">Projects</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2"><Counter end={99.9} duration={1800} suffix="%" /></div>
+                      <div className="text-3xl font-bold text-[#B5FF6D] mb-2"><Counter end={99.9} duration={1800} suffix="%" decimals={1} /></div>
                       <div className="text-[#8A9A5B] text-sm">Success Rate</div>
                     </div>
                   </div>
