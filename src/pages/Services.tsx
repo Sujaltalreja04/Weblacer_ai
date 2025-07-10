@@ -418,10 +418,7 @@ const Services: React.FC = () => {
   const [activeService, setActiveService] = useState<keyof typeof services>(serviceKeys[0]);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalSubject, setModalSubject] = useState('');
-<<<<<<< HEAD
   const [modalKey, setModalKey] = useState(0); // Add a key to force remount
-=======
->>>>>>> a28bc72749eec78e04440162dc7d7552a9b65d5d
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
@@ -590,15 +587,11 @@ const Services: React.FC = () => {
                           whileHover={{ scale: 1.08, boxShadow: '0 0 16px #B5FF6D55' }}
                           whileTap={{ scale: 0.96 }}
                           transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-<<<<<<< HEAD
                           onClick={() => {
                             setModalOpen(true);
                             setModalSubject(pkg.name);
                             setModalKey(prev => prev + 1); // Increment key to remount modal
                           }}
-=======
-                          onClick={() => { setModalOpen(true); setModalSubject(pkg.name); }}
->>>>>>> a28bc72749eec78e04440162dc7d7552a9b65d5d
                           className={`py-2 rounded-lg font-bold transition-all duration-300 flex items-center justify-center space-x-2 text-sm relative overflow-hidden ripple-btn w-full` + (pkg.popular ? ' bg-[#B5FF6D] text-black hover:bg-[#A3E85C]' : ' bg-gray-700 text-white hover:bg-[#B5FF6D] hover:text-black')}
                         >
                           <span>Choose Plan</span>
@@ -634,66 +627,40 @@ const Services: React.FC = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-<<<<<<< HEAD
               <div className="group bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 relative shadow-lg hover:shadow-[0_0_24px_4px_#B5FF6D55] flex flex-col items-center">
                 <Zap className="w-12 h-12 text-[#B5FF6D] mb-6 group-hover:animate-pulse" />
-=======
-              <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300">
-                <Zap className="w-12 h-12 text-[#B5FF6D] mb-6" />
->>>>>>> a28bc72749eec78e04440162dc7d7552a9b65d5d
                 <h3 className="text-2xl font-bold text-white mb-4">Fast Delivery</h3>
                 <p className="text-[#8A9A5B] leading-relaxed">
                   Quick turnaround times without compromising on quality. We understand the importance of meeting deadlines.
                 </p>
-<<<<<<< HEAD
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#B5FF6D] text-black text-xs font-semibold px-3 py-1 rounded shadow-lg z-20 pointer-events-none whitespace-nowrap">“Speed is the currency of business.”</span>
               </div>
               <div className="group bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 relative shadow-lg hover:shadow-[0_0_24px_4px_#B5FF6D55] flex flex-col items-center">
                 <Shield className="w-12 h-12 text-[#B5FF6D] mb-6 group-hover:animate-pulse" />
-=======
-              </div>
-
-              <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300">
-                <Shield className="w-12 h-12 text-[#B5FF6D] mb-6" />
->>>>>>> a28bc72749eec78e04440162dc7d7552a9b65d5d
                 <h3 className="text-2xl font-bold text-white mb-4">Quality Assurance</h3>
                 <p className="text-[#8A9A5B] leading-relaxed">
                   Rigorous testing and quality checks ensure that every project meets the highest standards of excellence.
                 </p>
-<<<<<<< HEAD
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#B5FF6D] text-black text-xs font-semibold px-3 py-1 rounded shadow-lg z-20 pointer-events-none whitespace-nowrap">“Quality means doing it right when no one is looking.”</span>
               </div>
               <div className="group bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300 relative shadow-lg hover:shadow-[0_0_24px_4px_#B5FF6D55] flex flex-col items-center">
                 <Globe className="w-12 h-12 text-[#B5FF6D] mb-6 group-hover:animate-pulse" />
-=======
-              </div>
-
-              <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-[#B5FF6D] transition-colors duration-300">
-                <Globe className="w-12 h-12 text-[#B5FF6D] mb-6" />
->>>>>>> a28bc72749eec78e04440162dc7d7552a9b65d5d
                 <h3 className="text-2xl font-bold text-white mb-4">24/7 Support</h3>
                 <p className="text-[#8A9A5B] leading-relaxed">
                   Round-the-clock support to ensure your business operations run smoothly without any interruptions.
                 </p>
-<<<<<<< HEAD
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#B5FF6D] text-black text-xs font-semibold px-3 py-1 rounded shadow-lg z-20 pointer-events-none whitespace-nowrap">“We’re here for you, anytime, anywhere.”</span>
-=======
->>>>>>> a28bc72749eec78e04440162dc7d7552a9b65d5d
               </div>
             </div>
           </div>
         </section>
       </motion.div>
-<<<<<<< HEAD
       <PlanModal
         key={modalKey} // Add key prop to force remount
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         subject={modalSubject}
       />
-=======
-      <PlanModal open={modalOpen} onClose={() => setModalOpen(false)} subject={modalSubject} />
->>>>>>> a28bc72749eec78e04440162dc7d7552a9b65d5d
     </div>
   );
 };
