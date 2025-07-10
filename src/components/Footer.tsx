@@ -20,11 +20,17 @@ const Footer: React.FC = () => {
             {/* Company Info */}
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
+<<<<<<< HEAD
                 <img
                   src="https://i.postimg.cc/DwwNNDsr/Whats-App-Image-2025-06-26-at-17-33-59-a813e2b2.jpg"
                   alt="Weblancer Logo"
                   className="w-12 h-12 rounded-lg object-cover bg-[#B5FF6D] border-2 border-[#B5FF6D]"
                 />
+=======
+                <div className="w-12 h-12 bg-[#B5FF6D] rounded-lg flex items-center justify-center">
+                  <span className="text-black font-bold text-xl">W</span>
+                </div>
+>>>>>>> a28bc72749eec78e04440162dc7d7552a9b65d5d
                 <div>
                   <h3 className="text-2xl font-bold text-white">WEBLANCER</h3>
                   <p className="text-[#8A9A5B] text-sm">Digital Innovation Company</p>

@@ -76,7 +76,7 @@ const founders = [
     ],
     social: {
       linkedin: 'https://www.linkedin.com/in/sujal-kishore-kumar-talreja-65975b216/',
-      github: 'https://github.com/Sujaltalreja04',
+      github: 'https://github.com/Sujaltalreja04',        
       twitter: 'https://x.com/SujalTalreja1',
       email: 'sujaltalreja04@gmail.com'
     },
@@ -97,10 +97,10 @@ const founders = [
       'Built intelligent backend systems'
     ],
     social: {
-      linkedin: 'https://www.linkedin.com/in/hitanshu-dineshkumar-patel-585567257/',
-      github: 'https://share.google/K8SmnMoHgmhnxIboL',
-      twitter: 'https://x.com/Hitansh86508615?t=N9bBGHfrQQ2sn4Qm9K6QZQ&s=09',
-      email: 'hitanshupatel01@gmail.com'
+      linkedin: '#',
+      github: '#',
+      twitter: '#',
+      email: 'hitanshu@weblancer.com'
     },
     story: `As the Co-founder and CTO at Weblancer, Hitanshu leads the innovation engine behind our tech stack. A passionate Python developer and AI problem solver, he specializes in building intelligent systems, automation pipelines, and scalable backend architectures that power high-performance applications.`
   }
@@ -491,7 +491,7 @@ const Founders: React.FC = () => {
                                 { year: '2025', label: 'Global Expansion', quote: '“A single year can change the world.”' },
                               ]
                             : [
-                                { year: '2025', label: 'AI Breakthrough', quote: '“Innovation is the calling of the future.”' },
+                                { year: '2025', label: 'AI Breakthrough', quote: '“Innovation is the calling of the future.”' }
                               ]
                           ).map((milestone, i) => (
                             <motion.div
@@ -505,7 +505,9 @@ const Founders: React.FC = () => {
                               <span className="w-6 h-6 rounded-full bg-[#B5FF6D] mb-2 animate-pulse shadow-2xl border-4 border-[#8AFF8A]" />
                               <span className="text-lg text-[#B5FF6D] font-extrabold mb-1 bg-black px-4 py-1 rounded-full shadow-lg border border-[#B5FF6D]">{milestone.year}</span>
                               <span className="text-base text-white font-bold mb-1">{milestone.label}</span>
-                              <span className="text-xs text-[#8A9A5B] italic text-center">{milestone.quote}</span>
+                              {milestone.quote && (
+                                <span className="text-xs text-[#8A9A5B] italic text-center">{milestone.quote}</span>
+                              )}
                             </motion.div>
                           ))}
                         </div>
@@ -577,7 +579,7 @@ const Founders: React.FC = () => {
                                 { year: '2025', label: 'Global Expansion', quote: '“A single year can change the world.”' },
                               ]
                             : [
-                                { year: '2025', label: 'AI Breakthrough', quote: '“Innovation is the calling of the future.”' },
+                                { year: '2025', label: 'AI Breakthrough', quote: '“Innovation is the calling of the future.”' }
                               ]
                           ).map((milestone, i) => (
                             <motion.div
@@ -591,7 +593,9 @@ const Founders: React.FC = () => {
                               <span className="w-6 h-6 rounded-full bg-[#B5FF6D] mb-2 animate-pulse shadow-2xl border-4 border-[#8AFF8A]" />
                               <span className="text-lg text-[#B5FF6D] font-extrabold mb-1 bg-black px-4 py-1 rounded-full shadow-lg border border-[#B5FF6D]">{milestone.year}</span>
                               <span className="text-base text-white font-bold mb-1">{milestone.label}</span>
-                              <span className="text-xs text-[#8A9A5B] italic text-center">{milestone.quote}</span>
+                              {milestone.quote && (
+                                <span className="text-xs text-[#8A9A5B] italic text-center">{milestone.quote}</span>
+                              )}
                             </motion.div>
                           ))}
                         </div>

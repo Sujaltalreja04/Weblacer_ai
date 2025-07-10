@@ -134,7 +134,7 @@ const Home: React.FC = () => {
           {/* Company Badge */}
           <div className="inline-flex items-center space-x-2 px-6 py-3 bg-[#B5FF6D]/10 border border-[#B5FF6D]/30 rounded-full mb-8">
             <Shield className="w-5 h-5 text-[#B5FF6D]" />
-            <span className="text-[#B5FF6D] font-semibold">{typewriterText}</span>
+            <span className="text-[#B5FF6D] font-semibold">Enterprise-Grade Solutions</span>
           </div>
 
           {/* Main Headline */}
